@@ -7,10 +7,10 @@
   "modifiedBy" : "userName",
   "lastUpdated" : "2014-08-27T10:40:47.567+03:00",
   "children" : [ {
-    "uri" : "/Artifact.1.8.26.1.zip",
+    "uri" : "/Artifact-1.8.26.1.zip",
     "folder" : false
   },{
-    "uri" : "/Artifact.1.3.4.1.zip",
+    "uri" : "/Artifact-1.3.4.1.zip",
     "folder" : false
  }],
   "uri" : "https://artifactory.example.com/artifactory/api/storage/repo-id/Path/To/Artifact"

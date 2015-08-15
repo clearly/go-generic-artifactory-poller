@@ -61,8 +61,12 @@ public class GenericArtifactoryFeedDocument {
         try {
             HttpResponse response = client.execute(method);
             if(response.getStatusLine().getStatusCode() == 404) {
+
+            	LOGGER.info(url);
+
                 throw new GenericArtifactoryException("No such package found");
             }
+
             else if(response.getStatusLine().getStatusCode() != 200){
                 throw new RuntimeException(String.format("HTTP %s, %s",
                         response.getStatusLine().getStatusCode(), response.getStatusLine().getReasonPhrase()));
@@ -149,10 +153,12 @@ public class GenericArtifactoryFeedDocument {
                 continue;
             }
             int lastDot = fileName.lastIndexOf(".");
+            int firstDash = fileName.indexOf("-");
             LOGGER.info("lastDot index : " + lastDot);
             LOGGER.info("fileName  : " + fileName);
-            LOGGER.info("packageId length : " + packageId.length());
-            String versionString  = fileName.substring(packageId.length() + 1, lastDot);
+            LOGGER.info("packageId : " + packageId);
+            LOGGER.info("firstDash index: " + firstDash);
+            String versionString  = fileName.substring(firstDash + 1, lastDot);
             LOGGER.info("versionString  : " + versionString);
             Version currentVersion = new Version(versionString);
             if(isWithinBounds(currentVersion)) {

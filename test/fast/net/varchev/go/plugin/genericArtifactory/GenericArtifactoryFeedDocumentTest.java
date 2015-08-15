@@ -27,7 +27,7 @@ public class GenericArtifactoryFeedDocumentTest {
         assertThat(result.getRevision(), is("1.8.26.1"));
 
         assertThat(result.getTimestamp(), is(javax.xml.bind.DatatypeConverter.parseDateTime(("2014-08-27T10:40:47.567+03:00")).getTime()));
-        assertThat(result.getDataFor(GenericArtifactoryPackageConfig.PACKAGE_LOCATION), is("http://artifactory.example.com/artifactory/repo-id/Path/To/Artifact/Artifact.1.8.26.1.zip"));
+        assertThat(result.getDataFor(GenericArtifactoryPackageConfig.PACKAGE_LOCATION), is("http://artifactory.example.com/artifactory/repo-id/Path/To/Artifact/Artifact-1.8.26.1.zip"));
         assertThat(result.getDataFor(GenericArtifactoryPackageConfig.PACKAGE_VERSION), is("1.8.26.1"));
     }
 }
